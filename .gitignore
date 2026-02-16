@@ -155,3 +155,5 @@ design/trainticket/FUDAN/trainticket
 design/hotelreservation/docker-compose.yml
 analyze_performance_variations*.*
 design/performance_vs_energy
+design/hdosku
+toolchain/backup

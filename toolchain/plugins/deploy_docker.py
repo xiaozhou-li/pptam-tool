@@ -37,12 +37,12 @@ def deploy(current_configuration, design_path, output, test_id):
         logging.info(f"Waiting for {seconds_to_wait_for_deployment} seconds to allow the application to deploy.")
         time.sleep(seconds_to_wait_for_deployment)
 
-# def undeploy(current_configuration, design_path, output, test_id):
-#     if current_configuration["docker_undeploy"]=="1":
-#         logging.info(f"Undeploying for test {test_id}.")
-#         seconds_to_wait_for_undeployment = int(current_configuration["docker_waiting_for_undeployment_in_seconds"])
-#         deployment_descriptor = os.path.join(output, "docker-compose.yml")
-#         command_undeploy = f"docker compose --file {deployment_descriptor} down --timeout 1"
-#         run_external_application(command_undeploy)
-#         logging.info(f"Waiting for {seconds_to_wait_for_undeployment} seconds to allow the application to undeploy.")
-#         time.sleep(seconds_to_wait_for_undeployment)
+def undeploy(current_configuration, design_path, output, test_id):
+    if current_configuration["docker_undeploy"]=="1":
+        logging.info(f"Undeploying for test {test_id}.")
+        seconds_to_wait_for_undeployment = int(current_configuration["docker_waiting_for_undeployment_in_seconds"])
+        deployment_descriptor = os.path.join(output, "docker-compose.yml")
+        command_undeploy = f"docker compose --file {deployment_descriptor} down --timeout 1"
+        run_external_application(command_undeploy)
+        logging.info(f"Waiting for {seconds_to_wait_for_undeployment} seconds to allow the application to undeploy.")
+        time.sleep(seconds_to_wait_for_undeployment)
