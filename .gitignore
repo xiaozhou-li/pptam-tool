@@ -157,3 +157,4 @@ analyze_performance_variations*.*
 design/performance_vs_energy
 design/hdosku
 toolchain/backup
+analyze_performance_energy*.*
